@@ -1,8 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reducers from './reducers/index';
+import { productReducer, selectedProductReducer } from './reducers/productReducer';
+import { cartReducer } from './reducers/cartReducer';
 
-const store = configureStore(
-    {reducer: reducers}, 
+const reducer = {
+    allProducts: productReducer,
+    product: selectedProductReducer,
+    cart: cartReducer,
+}
+
+const store = configureStore({
+    reducer,
+}, 
     {},
     window.__REDUX_DEVTOOLS_EXTENTSION__ && window.__REDUX_DEVTOOLS_EXTENTSION__()
 );

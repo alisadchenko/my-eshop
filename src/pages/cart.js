@@ -1,8 +1,8 @@
+import Cart from "../containers/Cart";
+
 function CartPage() {
     return (
-        <div className="four wide column">
-        
-        </div>
+        <Cart />
     );
 }
 

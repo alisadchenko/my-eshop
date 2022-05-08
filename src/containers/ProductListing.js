@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductComponent from './ProductComponent';
 import { setProducts } from '../redux/actions/productActions';
 
-const ProductListing = () => {
+const ProductListing = () => {    
     const products = useSelector((state) => state.allProducts.products);
     const dispatch = useDispatch();
     

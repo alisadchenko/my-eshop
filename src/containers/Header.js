@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../store/auth-context";
+import { CartState } from "../store/cart-context";
 
 
 const Header = () => {
@@ -11,7 +12,11 @@ const Header = () => {
   const logoutHandler = () => {
     authCtx.logout();
   };
-  
+
+  const {
+    state: { cart }
+  } = CartState();
+
   return (
     <div className="ui fixed menu">
       <div className="ui container center">
@@ -20,7 +25,9 @@ const Header = () => {
         </h2>
         <div className="right menu">
           <div className="item">
-            <Link to='/cart'>Cart</Link>
+            <Link to='/cart'>
+              <i className="icon shopping cart"></i> Cart ({cart.length})
+            </Link>
           </div>
           {!isLoggedIn && (
             <div className="item">

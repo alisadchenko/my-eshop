@@ -2,7 +2,7 @@ import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
     products: []
-}
+};
 
 export const productReducer = (state = initialState, { type, payload }) => {
     switch (type) {
@@ -11,7 +11,7 @@ export const productReducer = (state = initialState, { type, payload }) => {
       default:
         return state;
     }
-  };
+};
 
 export const selectedProductReducer = (state = {}, { type, payload }) => {
     console.log(type);
@@ -23,4 +23,4 @@ export const selectedProductReducer = (state = {}, { type, payload }) => {
       default:
         return state;
     }
-  };
+};
